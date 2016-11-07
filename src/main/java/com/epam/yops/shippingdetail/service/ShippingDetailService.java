@@ -29,6 +29,9 @@ public interface ShippingDetailService {
 	public abstract ShippingDetail findByZip(String zip);
 
 
+	String save(ShippingDetail details);
+
+
 	
 
 }

@@ -1,15 +1,13 @@
 package com.epam.yops.shippingdetail.model;
 
-import org.bson.types.ObjectId;
-
 public class ShippingDetailData {
 
 	public static ShippingDetail getData()
 	{
 		ShippingDetail shippingDetail = new ShippingDetail();
-		ObjectId id1 = new ObjectId();
+		//ObjectId id1 = new ObjectId();
 	
-		shippingDetail.setId(id1);
+		//shippingDetail.setId(id1);
 		shippingDetail.setShippingId("100");
 		shippingDetail.setFullName("Kishore");
 		shippingDetail.setAddrLine1("1");

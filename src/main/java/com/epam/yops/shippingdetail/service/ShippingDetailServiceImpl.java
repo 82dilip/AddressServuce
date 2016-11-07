@@ -1,14 +1,13 @@
 package com.epam.yops.shippingdetail.service;
 
-import java.io.Serializable;
-import java.util.Collection;
-
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.epam.yops.shippingdetail.model.ShippingDetail;
-import com.epam.yops.shippingdetail.service.ShippingDetailService;
 import com.epam.yops.shippingdetails.dao.ShippingDetailRepository;
+import com.mongodb.DBObject;
+import com.mongodb.util.JSON;
 
 @Service
 public class ShippingDetailServiceImpl implements ShippingDetailService {
@@ -33,6 +32,13 @@ public class ShippingDetailServiceImpl implements ShippingDetailService {
 
 		return (ShippingDetail) shippingDetailRepository.findByZip(zip);
 		
+	}
+
+	@Override
+	public String save(ShippingDetail details) {
+		DBObject sDetails =  (DBObject) shippingDetailRepository.save(details);
+		String id = sDetails.get("_id").toString();
+		return id;
 	}
 
 }

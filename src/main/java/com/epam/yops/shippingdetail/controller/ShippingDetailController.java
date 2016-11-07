@@ -2,6 +2,7 @@ package com.epam.yops.shippingdetail.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,5 +45,14 @@ public class ShippingDetailController {
 		.append("\n Phone Number : "+shippingDetails.getPhNumber());
 		return sb.toString();
 	}
+	
+	
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public void createShippingDetail(@RequestBody ShippingDetail details) {
+		String id = shippingDetailService.save(details);
+		System.err.println("Created id"+ id);
+	}
+	
+	
 
 }

@@ -1,7 +1,5 @@
 package com.epam.yops.shippingdetails.dao;
 
-import java.io.Serializable;
-
 import org.springframework.data.repository.CrudRepository;
 
 import com.epam.yops.shippingdetail.model.ShippingDetail;
